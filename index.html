@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Республика Мальдения</title>
+    <link rel="icon" type="image/png" href="lenya.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="boot-screen">
+        <div class="boot-content" id="boot-content"></div>
+    </div>
+
+    <canvas id="starfield"></canvas>
+
+    <nav class="main-nav">
+        <div class="nav-links" id="navLinks">
+            <div class="nav-tabs">
+                <a href="#" class="nav-link active" data-page="main">Главная</a>
+                <a href="#" class="nav-link" data-page="constitution">Конституция</a>
+                <a href="#" class="nav-link" data-page="party">Партия</a>
+                <a href="#" class="nav-link" data-page="services">Службы</a>
+                <span class="nav-indicator"></span>
+            </div>
+            <div class="terminal-inline">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-command" id="terminalCommand"></span>
+                <span class="terminal-cursor">█</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page active" id="page-main">
+            <div class="hero-block">
+                <h1 class="section-title-center">
+                    <span class="title-deco">✦</span> Республика Мальдения <span class="title-deco">✦</span>
+                </h1>
+                <p class="hero-desc">
+                    Государство, построенное на принципах национального единства и преданности Партии.
+                    Мы — народ, объединённый общей судьбой и готовый защищать свои идеалы.
+                </p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary" onclick="switchPage('constitution')">Читать конституцию</a>
+                    <a href="#" class="btn btn-outline" onclick="switchPage('services')">Наши службы</a>
+                </div>
+            </div>
+
+            <section class="section-block info-section">
+                <h2 class="section-title">Идеология и форма правления</h2>
+                <div class="info-columns">
+                    <div class="info-block card-like">
+                        <span class="info-icon"><i class="fas fa-flag"></i></span>
+                        <h3>Идеология</h3>
+                        <p><strong>Национал-социализм</strong> — государственная идеология, утверждающая приоритет нации, единство народа и дисциплину как основу могущества государства. В основе — идеи национального возрождения, социальной справедливости и сильной централизованной власти.</p>
+                    </div>
+                    <div class="info-block card-like">
+                        <span class="info-icon"><i class="fas fa-gavel"></i></span>
+                        <h3>Форма правления</h3>
+                        <p><strong>Диктатура</strong> — власть сосредоточена в руках Президента, избираемого пожизненно Съездом Партии национального единства. Верховный канцлер обеспечивает непрерывность управления, а Партия контролирует все сферы жизни общества.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block symbols-section">
+                <h2 class="section-title">Символы государства</h2>
+                <div class="symbols-grid">
+                    <div class="symbol-item card-like">
+                        <span class="symbol-icon"><i class="fas fa-flag"></i></span>
+                        <h3>Флаг</h3>
+                        <p>Квадратное полотнище золотисто-оливкового цвета с золотой каймой. В центре чёрный прямой крест, в каждом из четырёх полей которого размещён белый квадрат с красной зубчатой диагональной перевязью.</p>
+                    </div>
+                    <div class="symbol-item card-like">
+                        <span class="symbol-icon"><i class="fas fa-shield-alt"></i></span>
+                        <h3>Герб</h3>
+                        <p>Чёрный двуглавый орёл с золотыми клювами, лапами и красными языками. В правой лапе — серебряный меч с золотым эфесом, в левой — золотой сноп пшеницы.</p>
+                    </div>
+                    <div class="symbol-item card-like">
+                        <span class="symbol-icon"><i class="fas fa-music"></i></span>
+                        <h3>Гимн</h3>
+                        <p>«Вперёд, Мальдения!» — песнь о верности Родине и Партии.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block null-block">
+                <div class="null-content">
+                    <i class="fas fa-terminal null-icon"></i>
+                    <span class="null-text">[NULL]</span>
+                    <span class="null-sub">пустота</span>
+                </div>
+            </section>
+        </section>
+
+        <section class="page" id="page-constitution">
+            <div class="section-block constitution-block">
+                <h2 class="section-title section-title-center">
+                    <span class="title-deco">✦</span> Конституция Республики Мальдения <span class="title-deco">✦</span>
+                </h2>
+                <div class="constitution-preamble">
+                    <p><em>Принята Съездом Партии национального единства Мальдении. Мальденский народ, объединённый вокруг идей национального единства, порядка и дисциплины, под руководством Партии национального единства Мальдении, провозглашает настоящую Конституцию основным законом государства.</em></p>
+                </div>
+
+                <div class="chapter-tabs">
+                    <button class="chapter-tab active" data-chapter="0">I</button>
+                    <button class="chapter-tab" data-chapter="1">II</button>
+                    <button class="chapter-tab" data-chapter="2">III</button>
+                    <button class="chapter-tab" data-chapter="3">IV</button>
+                    <button class="chapter-tab" data-chapter="4">V</button>
+                    <button class="chapter-tab" data-chapter="5">VI</button>
+                    <button class="chapter-tab" data-chapter="6">VII</button>
+                    <button class="chapter-tab" data-chapter="7">VIII</button>
+                    <button class="chapter-tab" data-chapter="8">IX</button>
+                    <button class="chapter-tab" data-chapter="9">X</button>
+                    <button class="chapter-tab" data-chapter="10">XI</button>
+                </div>
+
+                <div class="chapter-content visible" id="chapterContent"></div>
+            </div>
+        </section>
+
+        <section class="page" id="page-party">
+            <div class="section-block party-block">
+                <h2 class="section-title section-title-center">
+                    <span class="title-deco">✦</span> Партия национального единства <span class="title-deco">✦</span>
+                </h2>
+                <p class="party-subtitle">В стране введена <strong>однопартийная система</strong>. ПНЕМ — единственная законная политическая сила.</p>
+
+                <div class="party-card" style="margin-bottom: 24px;">
+                    <img src="pnem.png" alt="Логотип ПНЕМ" class="party-avatar">
+                    <div class="party-info">
+                        <h3 class="party-name">Партия Национального Единства Мальдении <span class="party-badge">ПНЕМ</span></h3>
+                        <p class="party-role" style="color: #888;">Единственная законная политическая сила</p>
+                        <div class="party-role-desc" style="border-top-color: #2a2a2a;">
+                            <strong>О партии:</strong>
+                            <p style="margin-top: 4px;">Партия национального единства Мальдении (ПНЕМ) является единственной законной политической партией Республики Мальдения и, согласно конституции государства, играет руководящую роль в управлении страной, формируя правительство и определяя основные направления внутренней и внешней политики.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="party-grid">
+                    <div class="party-card">
+                        <img src="brazil.jpg" alt="Бразил" class="party-avatar" loading="lazy">
+                        <div class="party-info">
+                            <h3 class="party-name">Бразил <span class="party-badge">ПНЕМ</span></h3>
+                            <p class="party-role"><i class="fas fa-crown"></i> Президент</p>
+                            <p class="party-discord"><i class="fab fa-discord"></i> brazil1809</p>
+                            <p class="party-status"><span class="status-dot online"></span> Член партии</p>
+                            <div class="party-role-desc">
+                                <strong>Обязанности:</strong>
+                                <p>Глава государства, верховный главнокомандующий, гарант Конституции.</p>
+                            </div>
+                            <div class="party-about-text">
+                                <strong>О себе:</strong>
+                                <p>Путь от окопного солдата до правителя. Авторитет в армии непререкаем, законы священны. Помнит каждого, кто стоял рядом, и не прощает предательства. ВЛАСТЬ ПРЕЗИДЕНТА — ЭТО ПОРЯДОК НАЦИИ! ПОРЯДОК ВОСТОРЖЕСТВУЕТ СТАЛЬЮ!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="party-card">
+                        <img src="ohlobistin.jpg" alt="idfc v." class="party-avatar" loading="lazy">
+                        <div class="party-info">
+                            <h3 class="party-name">idfc v. <span class="party-badge">ПНЕМ</span></h3>
+                            <p class="party-role"><i class="fas fa-user-tie"></i> Премьер-министр</p>
+                            <p class="party-discord"><i class="fab fa-discord"></i> vereskkk</p>
+                            <p class="party-status"><span class="status-dot online"></span> Член партии</p>
+                            <div class="party-role-desc">
+                                <strong>Обязанности:</strong>
+                                <p>Руководство Правительством, исполнение законов, контроль над государственным аппаратом.</p>
+                            </div>
+                            <div class="party-about-text">
+                                <strong>О себе:</strong>
+                                <p>Премьер-Министр, Министр Обороны Мальдении. Построил безупречную карьеру от простого рядового до высшего звания, которого мог достичь служащий человек. Пользуется поддержкой среди армии благодаря своим качествам справедливости и честности.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="party-card">
+                        <img src="zqwer.jpg" alt="zqwer" class="party-avatar" loading="lazy">
+                        <div class="party-info">
+                            <h3 class="party-name">zqwer <span class="party-badge">ПНЕМ</span></h3>
+                            <p class="party-role"><i class="fas fa-gavel"></i> Верховный канцлер</p>
+                            <p class="party-discord"><i class="fab fa-discord"></i> oppora</p>
+                            <p class="party-status"><span class="status-dot online"></span> Член партии</p>
+                            <div class="party-role-desc">
+                                <strong>Обязанности:</strong>
+                                <p>Обеспечение непрерывности государственного управления, контроль за законностью решений.</p>
+                            </div>
+                            <div class="party-about-text">
+                                <strong>О себе:</strong>
+                                <p>Бывший вождь Герцогства Антерии и Король Эркея. Прошёл несколько войн, получил звание Героя Республики и орден Железного меча. Состоит в Партии национального единства Мальдении.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="party-card">
+                        <img src="gadza0.jpg" alt="Jasō #gentoo" class="party-avatar" loading="lazy">
+                        <div class="party-info">
+                            <h3 class="party-name">Jasō #gentoo <span class="party-badge">ПНЕМ</span></h3>
+                            <p class="party-role"><i class="fas fa-flag"></i> Председатель партии</p>
+                            <p class="party-discord"><i class="fab fa-discord"></i> gadza0</p>
+                            <p class="party-status"><span class="status-dot online"></span> Член партии</p>
+                            <div class="party-role-desc">
+                                <strong>Обязанности:</strong>
+                                <p>Руководство ПНЕМ, развитие вычислительной техники и техническая модернизация Мальдении.</p>
+                            </div>
+                            <div class="party-about-text">
+                                <strong>О себе:</strong>
+                                <p>Архитектор цифровой инфраструктуры Мальдении. Отвечаю за разработку государственных информационных систем, связь и техническую модернизацию. <code style="color:#c4b5d4; background:#1a1a1a; padding:0 6px; border-radius:3px; font-family:'Courier New',monospace;">emerge -uD @world</code></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-services">
+            <div class="section-block party-block">
+                <h2 class="section-title section-title-center">
+                    <span class="title-deco">✦</span> Государственные службы <span class="title-deco">✦</span>
+                </h2>
+                <p class="party-subtitle">Обеспечение безопасности, правопорядка и обороноспособности Республики Мальдения</p>
+
+                <div class="party-grid">
+                    <div class="party-card">
+                        <img src="army.jpg" alt="Флаг армии" class="party-avatar" style="border-radius: 12px; object-fit: cover; width: 80px; height: 80px;">
+                        <div class="party-info">
+                            <h3 class="party-name">Республиканская Армия Мальдении</h3>
+                            <p class="party-role"><i class="fas fa-shield-alt"></i> Вооружённые Силы</p>
+                            <div class="party-role-desc">
+                                <strong>Задачи:</strong>
+                                <p>Обеспечение безопасности государственного строя, народа и границ, защита суверенитета и национальных интересов.</p>
+                            </div>
+                            <div class="party-about-text">
+                                <strong>Подчинение:</strong>
+                                <p>Министерству обороны.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="party-card">
+                        <img src="np.jpg" alt="Флаг полиции" class="party-avatar" style="border-radius: 12px; object-fit: cover; width: 80px; height: 80px;">
+                        <div class="party-info">
+                            <h3 class="party-name">Национальная Полиция Мальдении</h3>
+                            <p class="party-role"><i class="fas fa-user-shield"></i> Правоохранительный орган</p>
+                            <div class="party-role-desc">
+                                <strong>Задачи:</strong>
+                                <p>Обеспечение общественной безопасности, защита жизни и здоровья граждан, пресечение преступности, охрана правопорядка.</p>
+                            </div>
+                            <div class="party-about-text">
+                                <strong>Подчинение:</strong>
+                                <p>Министерству внутренних дел.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2026 Республика Мальдения</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
