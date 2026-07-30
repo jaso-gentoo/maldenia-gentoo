@@ -13,6 +13,7 @@
 <body>
     <div id="boot-screen">
         <div class="boot-content" id="boot-content"></div>
+        <div id="boot-progress"><div id="boot-progress-fill"></div></div>
     </div>
 
     <canvas id="starfield"></canvas>
@@ -22,6 +23,9 @@
             <div class="nav-tabs">
                 <a href="#" class="nav-link active" data-page="main">Главная</a>
                 <a href="#" class="nav-link" data-page="constitution">Конституция</a>
+                <a href="#" class="nav-link" data-page="criminal">Уголовный кодекс</a>
+                <a href="#" class="nav-link" data-page="coap">КОАП</a>
+                <a href="#" class="nav-link" data-page="upk">УПК</a>
                 <a href="#" class="nav-link" data-page="party">Партия</a>
                 <a href="#" class="nav-link" data-page="services">Службы</a>
                 <span class="nav-indicator"></span>
@@ -96,30 +100,92 @@
             </section>
         </section>
 
-        <section class="page" id="page-constitution">
-            <div class="section-block constitution-block">
-                <h2 class="section-title section-title-center">
-                    <span class="title-deco">✦</span> Конституция Республики Мальдения <span class="title-deco">✦</span>
+    <section class="page" id="page-constitution">
+        <div class="section-block constitution-block">
+            <h2 class="section-title section-title-center" style="color:#5a9c6a;">
+                <span class="title-deco" style="color:#5a9c6a;">✦</span> Конституция Республики Мальдения <span class="title-deco" style="color:#5a9c6a;">✦</span>
+            </h2>
+            <p class="party-subtitle" style="border-left-color: #5a9c6a;">
+                Основной закон государства, определяющий устройство власти, права и обязанности граждан, а также принципы общественного и государственного строя.
+            </p>
+
+            <div class="constitution-tabs chapter-tabs">
+                <button class="constitution-tab chapter-tab active" data-chapter="0">Глава I. Общие положения</button>
+                <button class="constitution-tab chapter-tab" data-chapter="1">Глава II. Партия</button>
+                <button class="constitution-tab chapter-tab" data-chapter="2">Глава III. Президент</button>
+                <button class="constitution-tab chapter-tab" data-chapter="3">Глава IV. Канцлер</button>
+                <button class="constitution-tab chapter-tab" data-chapter="4">Глава V. Правительство</button>
+                <button class="constitution-tab chapter-tab" data-chapter="5">Глава VI. Собрание</button>
+                <button class="constitution-tab chapter-tab" data-chapter="6">Глава VII. Суд</button>
+                <button class="constitution-tab chapter-tab" data-chapter="7">Глава VIII. Воинская</button>
+                <button class="constitution-tab chapter-tab" data-chapter="8">Глава IX. СМИ</button>
+                <button class="constitution-tab chapter-tab" data-chapter="9">Глава X. Права</button>
+                <button class="constitution-tab chapter-tab" data-chapter="10">Глава XI. Заключительные</button>
+            </div>
+
+            <div class="constitution-content chapter-content" id="chapterContent"></div>
+        </div>
+    </section>
+
+        <section class="page" id="page-criminal">
+            <div class="section-block criminal-block">
+                <h2 class="section-title section-title-center" style="color:#d45a5a;">
+                    <span class="title-deco" style="color:#d45a5a;">✦</span> Уголовный кодекс Мальдении <span class="title-deco" style="color:#d45a5a;">✦</span>
                 </h2>
-                <div class="constitution-preamble">
-                    <p><em>Принята Съездом Партии национального единства Мальдении. Мальденский народ, объединённый вокруг идей национального единства, порядка и дисциплины, под руководством Партии национального единства Мальдении, провозглашает настоящую Конституцию основным законом государства.</em></p>
+                <p class="party-subtitle" style="border-left-color: #d45a5a;">
+                    Настоящий Кодекс устанавливает преступность и наказуемость деяний, посягающих на государственный строй, личность и имущество граждан.
+                </p>
+
+                <div class="criminal-tabs chapter-tabs">
+                    <button class="criminal-tab chapter-tab active" data-criminal="0">Глава 1. Общие положения</button>
+                    <button class="criminal-tab chapter-tab" data-criminal="1">Глава 2. Гос. преступления</button>
+                    <button class="criminal-tab chapter-tab" data-criminal="2">Глава 3. Общественный порядок</button>
+                    <button class="criminal-tab chapter-tab" data-criminal="3">Глава 4. Против личности</button>
+                    <button class="criminal-tab chapter-tab" data-criminal="4">Глава 5. Экономические</button>
+                    <button class="criminal-tab chapter-tab" data-criminal="5">Глава 6. Воинские</button>
                 </div>
 
-                <div class="chapter-tabs">
-                    <button class="chapter-tab active" data-chapter="0">I</button>
-                    <button class="chapter-tab" data-chapter="1">II</button>
-                    <button class="chapter-tab" data-chapter="2">III</button>
-                    <button class="chapter-tab" data-chapter="3">IV</button>
-                    <button class="chapter-tab" data-chapter="4">V</button>
-                    <button class="chapter-tab" data-chapter="5">VI</button>
-                    <button class="chapter-tab" data-chapter="6">VII</button>
-                    <button class="chapter-tab" data-chapter="7">VIII</button>
-                    <button class="chapter-tab" data-chapter="8">IX</button>
-                    <button class="chapter-tab" data-chapter="9">X</button>
-                    <button class="chapter-tab" data-chapter="10">XI</button>
+                <div class="criminal-content chapter-content" id="criminalContent"></div>
+            </div>
+        </section>
+
+        <section class="page" id="page-coap">
+            <div class="section-block coap-block">
+                <h2 class="section-title section-title-center" style="color:#d4b48c;">
+                    <span class="title-deco" style="color:#d4b48c;">✦</span> Кодекс об административных правонарушениях <span class="title-deco" style="color:#d4b48c;">✦</span>
+                </h2>
+                <p class="party-subtitle" style="border-left-color: #d4b48c;">
+                    Настоящий Кодекс устанавливает ответственность за проступки, посягающие на общественный порядок, транспортную дисциплину и экономическое благополучие Республики.
+                </p>
+
+                <div class="coap-tabs chapter-tabs">
+                    <button class="coap-tab chapter-tab active" data-coap="0">Глава 1. Общие положения</button>
+                    <button class="coap-tab chapter-tab" data-coap="1">Глава 2. Общественный порядок</button>
+                    <button class="coap-tab chapter-tab" data-coap="2">Глава 3. Гос. управление</button>
+                    <button class="coap-tab chapter-tab" data-coap="3">Глава 4. ПДД</button>
+                    <button class="coap-tab chapter-tab" data-coap="4">Глава 5. Экономические</button>
                 </div>
 
-                <div class="chapter-content visible" id="chapterContent"></div>
+                <div class="coap-content chapter-content" id="coapContent"></div>
+            </div>
+        </section>
+
+        <section class="page" id="page-upk">
+            <div class="section-block upk-block">
+                <h2 class="section-title section-title-center" style="color:#5a7a9c;">
+                    <span class="title-deco" style="color:#5a7a9c;">✦</span> Уголовно-процессуальный кодекс <span class="title-deco" style="color:#5a7a9c;">✦</span>
+                </h2>
+                <p class="party-subtitle" style="border-left-color: #5a7a9c;">
+                    Настоящий Кодекс регламентирует порядок расследования, судебного разбирательства и защиты прав граждан в уголовном процессе Республики Мальдения.
+                </p>
+
+                <div class="upk-tabs chapter-tabs">
+                    <button class="upk-tab chapter-tab active" data-upk="0">Раздел I. Общие положения</button>
+                    <button class="upk-tab chapter-tab" data-upk="1">Раздел II. Следственные действия</button>
+                    <button class="upk-tab chapter-tab" data-upk="2">Раздел III. Судебное производство</button>
+                </div>
+
+                <div class="upk-content chapter-content" id="upkContent"></div>
             </div>
         </section>
 

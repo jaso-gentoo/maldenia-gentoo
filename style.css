@@ -399,7 +399,6 @@ body.loaded .main-content {
     gap: 24px;
 }
 
-/* ----- NULL блок ----- */
 .null-block {
     text-align: center;
     padding: 40px 36px;
@@ -432,81 +431,6 @@ body.loaded .main-content {
     font-style: italic;
 }
 
-/* ----- Конституция ----- */
-.constitution-block {
-    padding: 32px 36px;
-}
-
-.constitution-preamble {
-    font-style: italic;
-    color: #ccc;
-    padding: 16px 24px;
-    background: #1a1a1a;
-    border-left: 4px solid #c4b5d4;
-    border-radius: 8px;
-    margin-bottom: 24px;
-    font-size: 1.05rem;
-}
-
-.chapter-tabs {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    justify-content: center;
-}
-
-.chapter-tab {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #666;
-    padding: 8px 16px;
-    background: transparent;
-    border: 1px solid #2a2a2a;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    background: rgba(20, 20, 20, 0.3);
-    min-width: 40px;
-    text-align: center;
-}
-
-.chapter-tab:hover {
-    color: #aaa;
-    border-color: #555;
-    background: rgba(40, 40, 40, 0.4);
-    transform: translateY(-2px);
-}
-
-.chapter-tab.active {
-    color: #c4b5d4;
-    border-color: #c4b5d4;
-    background: rgba(196, 181, 212, 0.08);
-    box-shadow: 0 0 20px rgba(196, 181, 212, 0.06);
-    transform: translateY(-2px);
-}
-
-.chapter-content {
-    padding: 12px 0 0 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.chapter-content p {
-    margin-bottom: 10px;
-    color: #ccc;
-    padding-left: 12px;
-    border-left: 2px solid #c4b5d4;
-    padding-bottom: 2px;
-    line-height: 1.7;
-}
-
-.chapter-content p strong {
-    color: #e8e8e8;
-    font-weight: 600;
-}
-
-/* ----- Партия и Службы ----- */
 .party-block {
     padding: 32px 36px;
 }
@@ -660,7 +584,123 @@ body.loaded .main-content {
     margin: 0;
 }
 
-/* ----- Загрузочный экран ----- */
+.chapter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.chapter-tab {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: rgba(20, 20, 20, 0.3);
+    min-width: 40px;
+    text-align: center;
+}
+
+.chapter-tab:hover {
+    color: #aaa;
+    border-color: #555;
+    background: rgba(40, 40, 40, 0.4);
+    transform: translateY(-2px);
+}
+
+.chapter-tab.active {
+    transform: translateY(-2px);
+}
+
+.constitution-tab.active {
+    color: #5a9c6a;
+    border-color: #5a9c6a;
+    background: rgba(90, 156, 106, 0.08);
+    box-shadow: 0 0 20px rgba(90, 156, 106, 0.06);
+}
+
+.criminal-tab.active {
+    color: #d45a5a;
+    border-color: #d45a5a;
+    background: rgba(212, 90, 90, 0.08);
+    box-shadow: 0 0 20px rgba(212, 90, 90, 0.06);
+}
+
+.coap-tab.active {
+    color: #d4b48c;
+    border-color: #d4b48c;
+    background: rgba(212, 180, 140, 0.08);
+    box-shadow: 0 0 20px rgba(212, 180, 140, 0.06);
+}
+
+.upk-tab.active {
+    color: #5a7a9c;
+    border-color: #5a7a9c;
+    background: rgba(90, 122, 156, 0.08);
+    box-shadow: 0 0 20px rgba(90, 122, 156, 0.06);
+}
+
+.chapter-content {
+    padding: 12px 0 0 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.chapter-content.fade-out {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+.constitution-content p {
+    margin-bottom: 10px;
+    color: #ccc;
+    padding-left: 12px;
+    border-left: 2px solid #5a9c6a;
+    padding-bottom: 2px;
+    line-height: 1.7;
+}
+
+.criminal-content p {
+    margin-bottom: 10px;
+    color: #ccc;
+    padding-left: 12px;
+    border-left: 2px solid #d45a5a;
+    padding-bottom: 2px;
+    line-height: 1.7;
+}
+
+.coap-content p {
+    margin-bottom: 10px;
+    color: #ccc;
+    padding-left: 12px;
+    border-left: 2px solid #d4b48c;
+    padding-bottom: 2px;
+    line-height: 1.7;
+}
+
+.upk-content p {
+    margin-bottom: 10px;
+    color: #ccc;
+    padding-left: 12px;
+    border-left: 2px solid #5a7a9c;
+    padding-bottom: 2px;
+    line-height: 1.7;
+}
+
+.constitution-content p strong,
+.criminal-content p strong,
+.coap-content p strong,
+.upk-content p strong {
+    color: #e8e8e8;
+    font-weight: 600;
+}
+
 #boot-screen {
     position: fixed;
     top: 0;
@@ -691,6 +731,7 @@ body.loaded .main-content {
     flex-direction: column;
     gap: 2px;
     padding-left: 5%;
+    padding-bottom: 60px;
 }
 
 .boot-line {
@@ -731,16 +772,35 @@ body.loaded .main-content {
     font-size: 0.85rem;
 }
 
-.boot-line.command {
-    color: #ddd;
-}
-
 @keyframes bootFadeIn {
     0% { opacity: 0; transform: translateY(2px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ----- Футер ----- */
+#boot-progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #222;
+    z-index: 10000;
+}
+
+#boot-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6a4e9c, #c4b5d4, #6a4e9c);
+    background-size: 200% 100%;
+    animation: progressGlow 2s linear infinite;
+    transition: width 0.2s ease;
+}
+
+@keyframes progressGlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
 .footer {
     margin-top: auto;
     width: 100%;
@@ -791,138 +851,109 @@ html {
         padding: 8px 12px 6px 12px;
         border-radius: 16px;
     }
-
     .nav-tabs {
         gap: 2px;
         flex-wrap: wrap;
         justify-content: center;
     }
-
     .nav-link {
         font-size: 0.7rem;
         padding: 4px 12px;
     }
-
     .terminal-inline {
         font-size: 0.6rem;
         padding: 2px 8px;
         min-height: 22px;
     }
-
     .main-content {
         padding: 110px 0 40px 0;
     }
-
     .hero-block .section-title-center {
         font-size: 2rem;
     }
-
     .hero-block {
         padding: 20px 10px 40px;
     }
-
     .info-columns {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-
     .symbols-grid {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-
     .section-title-center {
         font-size: 1.5rem;
         gap: 10px;
     }
-
     .section-title-center::before,
     .section-title-center::after {
         max-width: 40px;
     }
-
-    .constitution-block {
+    .constitution-block,
+    .criminal-block,
+    .party-block {
         padding: 24px 16px;
     }
-
     .chapter-tabs {
         gap: 4px;
     }
-
     .chapter-tab {
         font-size: 0.75rem;
         padding: 4px 10px;
         min-width: 30px;
     }
-
-    .chapter-content p {
+    .constitution-content p,
+    .criminal-content p,
+    .coap-content p,
+    .upk-content p {
         padding-left: 8px;
         font-size: 0.95rem;
     }
-
     .footer-content p {
         font-size: 0.7rem;
     }
-
-    .party-block {
-        padding: 24px 16px;
-    }
-
     .party-grid {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-
     .party-card {
         padding: 16px;
         flex-direction: column;
         text-align: center;
         align-items: center;
     }
-
     .party-avatar {
         width: 70px;
         height: 70px;
     }
-
     .party-name {
         justify-content: center;
         font-size: 1.1rem;
     }
-
     .party-role {
         font-size: 0.8rem;
     }
-
     .party-discord {
         font-size: 0.8rem;
     }
-
     .party-status {
         justify-content: center;
         font-size: 0.75rem;
     }
-
-    .party-role-desc {
-        text-align: left;
-    }
-
+    .party-role-desc,
     .party-about-text {
         text-align: left;
     }
-
     #boot-screen {
         padding: 20px 10px;
     }
-
     .boot-line {
         font-size: 0.65rem;
     }
-
     .boot-line.prompt {
         font-size: 0.75rem;
     }
-
     .null-text {
         font-size: 1rem;
     }
