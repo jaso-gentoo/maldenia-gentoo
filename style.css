@@ -958,3 +958,49 @@ html {
         font-size: 1rem;
     }
 }
+
+@media (max-width: 768px) {
+    .nav-links {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(20, 20, 20, 0.95) !important;
+        box-shadow: none !important;
+    }
+    .section-block {
+        box-shadow: none !important;
+        transition: none !important;
+    }
+    .party-card, .info-block.card-like, .symbol-item.card-like {
+        transition: none !important;
+        transform: none !important;
+    }
+    .chapter-tab {
+        transition: none !important;
+    }
+    .chapter-content {
+        transition: none !important;
+    }
+    .chapter-tab:hover {
+        transform: none !important;
+    }
+    .chapter-tab.active {
+        transform: none !important;
+    }
+    .btn {
+        transition: none !important;
+    }
+    .btn:hover {
+        transform: none !important;
+    }
+    .party-card:hover {
+        transform: none !important;
+    }
+    .section-block:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    .info-block.card-like:hover,
+    .symbol-item.card-like:hover {
+        transform: none !important;
+    }
+}
