@@ -5,13 +5,13 @@
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
         let width, height;
-        let particles = [];
-        let backgroundStars = [];
-        const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
-        const PARTICLE_COUNT = isMobile ? 300 : 1200;
-        const STAR_COUNT = isMobile ? 800 : 4000;
+        const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+        const PARTICLE_COUNT = isMobile ? 200 : 1200;
+        const STAR_COUNT = isMobile ? 500 : 4000;
+        const FPS_LIMIT = isMobile ? 30 : 60;
         let time = 0;
         let mouseX = null, mouseY = null;
+        let frameCount = 0;
 
         function resize() {
             width = canvas.width = window.innerWidth;
@@ -75,6 +75,12 @@
         }
 
         function draw() {
+            frameCount++;
+            if (frameCount % Math.round(60 / FPS_LIMIT) !== 0) {
+                requestAnimationFrame(draw);
+                return;
+            }
+
             ctx.clearRect(0, 0, width, height);
             let offsetX = 0, offsetY = 0;
             if (!isMobile && mouseX !== null && mouseY !== null) {
