@@ -7,7 +7,7 @@
         let width, height;
         let particles = [];
         let backgroundStars = [];
-        const isMobile = window.innerWidth < 768;
+        const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
         const PARTICLE_COUNT = isMobile ? 300 : 1200;
         const STAR_COUNT = isMobile ? 800 : 4000;
         let time = 0;
