@@ -1006,3 +1006,121 @@ html {
     border-radius: 3px;
     white-space: nowrap;
 }
+
+.credits-block {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 24px;
+    padding: 32px 36px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.credits-grid {
+    position: relative;
+    height: 100px;
+    margin: 20px 0 10px;
+}
+
+.credit-item {
+    position: absolute;
+    top: 0;
+    width: calc(50% - 12px);
+    transition: left 0.5s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 20px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.credit-item:first-child {
+    left: 0;
+}
+
+.credit-item:last-child {
+    left: calc(50% + 12px);
+}
+
+.credits-grid.swapped .credit-item:first-child {
+    left: calc(50% + 12px);
+}
+
+.credits-grid.swapped .credit-item:last-child {
+    left: 0;
+}
+
+.credit-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #c4b5d4;
+    flex-shrink: 0;
+    background: #2a2a2a;
+}
+
+.credit-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.credit-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.credit-role {
+    font-size: 0.85rem;
+    color: #c4b5d4;
+}
+
+.credits-footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 12px;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 12px;
+}
+
+@media (max-width: 750px) {
+    .credits-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: auto;
+        position: static;
+        margin: 20px 0 10px;
+    }
+    .credit-item {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 12px 16px;
+    }
+    .credit-item:first-child,
+    .credit-item:last-child {
+        left: auto;
+    }
+    .credits-grid.swapped .credit-item:first-child,
+    .credits-grid.swapped .credit-item:last-child {
+        left: auto;
+    }
+    .credit-avatar {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+
+
+
+
+
